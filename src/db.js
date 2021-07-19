@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const env = require('./env.js');
 
-const sequelize = new Sequelize(`${env.dialect}://${env.username}:${env.password}@${env.host}:${env.port}/countries`, {
+const sequelize = new Sequelize(`${env.database}://${env.username}:${env.password}@${env.host}:${env.port}/countries`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 });
