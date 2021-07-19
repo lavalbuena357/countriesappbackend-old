@@ -2,25 +2,13 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-const {
-  DB_USER, DB_PASSWORD, DB_HOST, DATABASE,
-} = process.env;
+const env = require('./env.js');
 
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DATABASE}`, {
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000
-  },
+const sequelize = new Sequelize(`postgres://${env.username}:${env.password}@${env.host}/${env.database}`, {
+  pool: {max: 5, min: 0, acquire: 30000, idle: 10000},
   logging: false, 
   native: false, 
-  dialectOptions: {
-  ssl: {    
-    require: true,
-    rejectUnauthorized: false 
-    }
-  },
+  dialectOptions: {ssl: {require: true, rejectUnauthorized: false}},
 });
 const basename = path.basename(__filename);
 
