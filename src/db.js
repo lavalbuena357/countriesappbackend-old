@@ -7,6 +7,7 @@ const env = require('./env.js');
 const sequelize = new Sequelize(`postgres://${env.username}:${env.password}@${env.host}/${env.database}`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+  ssl: { rejectUnauthorized: false },
   dialectOptions: {
     ssl: true
   },
