@@ -7,7 +7,7 @@ const { conn } = require('./src/db.js');
 //   });
 // });
 
-server.listen(8000, () => {
+server.listen(8080, () => {
   console.log(`listening at 8000`);
 })
 
