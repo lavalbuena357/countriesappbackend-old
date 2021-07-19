@@ -7,12 +7,6 @@ const env = require('./env.js');
 const sequelize = new Sequelize(`${env.dialect}://${env.username}:${env.password}@${env.host}:${env.port}/${env.database}`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-  pool: {
-    max: env.max,
-    min: env.pool.min,
-    acquire: env.pool.acquire,
-    idle: env.pool.idle
-  }
 });
 const basename = path.basename(__filename);
 
