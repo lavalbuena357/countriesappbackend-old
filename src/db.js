@@ -6,9 +6,9 @@ const env = require('./env.js');
 
 const sequelize = new Sequelize(`postgres://${env.username}:${env.password}@${env.host}/${env.database}`, {
   pool: {
-    max: 20,
+    max: 5,
     min: 0,
-    acquire: 60000,
+    acquire: 30000,
     idle: 10000
   },
   logging: false, 

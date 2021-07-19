@@ -6,9 +6,9 @@ const env = {
   port: 5432,
   dialect: 'postgres',
   pool: {
-	  max: 20,
+	  max: 5,
 	  min: 0,
-	  acquire: 60000,
+	  acquire: 30000,
 	  idle: 10000
   }
 };
