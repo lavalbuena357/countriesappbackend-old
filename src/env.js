@@ -6,7 +6,7 @@ const env = {
   port: 5432,
   dialect: 'postgres',
   pool: {
-	  max: 5,
+	  max: 20,
 	  min: 0,
 	  acquire: 60000,
 	  idle: 10000
